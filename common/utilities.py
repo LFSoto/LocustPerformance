@@ -1,8 +1,3 @@
-###
-# Copyright (c) 2023 Wind River Systems, Inc.
-#
-# The right to copy, distribute, modify, or otherwise make use of this software may be licensed only pursuant to the terms of an applicable Wind River license agreement.
-###
 
 import os
 import logging
@@ -11,7 +6,7 @@ logging.basicConfig(level=logging.INFO)
 um_auth = os.getenv('um_env')
 
 def get_authentication_token(self, user_info):
-    with self.client.post(url="https://um.gateway.intb.wrstudio.cloud/auth/users/signIn/external", catch_response=True, json=user_info) as response:
+    with self.client.post(url="url", catch_response=True, json=user_info) as response:
         if response.status_code == 200:
             token = 'Bearer ' + response.json()['data']['jwt']
             return token
